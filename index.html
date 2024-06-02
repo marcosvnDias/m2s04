@@ -1,4 +1,153 @@
 <meta charset="UTF-8">
 <script>
+    // 1º Card
+    let numeros = [2, 4, 1, 4];
+    let soma = numeros.reduce((acumulador, numAtual) => {
+        return acumulador + numAtual;
+    },0);
+
+    console.log(soma);
+
+    // 2º Card
+    let pares = numeros.filter((num) => {
+        if (num % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    console.log(pares);
+
+    // 3º Card
+    let quadrados = numeros.map((num) => {
+        return num * num;
+    })
+
+    console.log(quadrados);
+
+    // 4º Card
+    class Produto1 {
+        nome
+        preco
+        quantidade
+
+        constructor(nome, preco, quantidade) {
+            this.nome = nome;
+            this.preco = preco;
+            this.quantidade = quantidade;
+        }
+    }
+
+    console.log(new Produto1("Lápis", "12,65", 2));
+
+    // 5º Card
+    class Produto2 {
+        constructor(nome, preco, quantidade) {
+            this.nome = nome;
+            this.preco = preco;
+            this.quantidade = quantidade;
+        }
+
+        vender(quantidade) {
+            if (quantidade > this.quantidade) {
+                console.log("Estoque insuficiente");
+            } else {
+                this.quantidade = this.quantidade - quantidade;
+            }
+        }
+    }
+
+    let produto2 = new Produto2("Lápis", "12,65", 3); 
+    produto2.vender(2);
+
+    console.log(produto2);
+
+    // 6º Card
+    class Produto3 {
+        constructor(nome, preco, quantidade) {
+            this.nome = nome;
+            this.preco = preco;
+            this.quantidade = quantidade;
+        }
+
+        vender(quantidade) {
+            if (quantidade > this.quantidade) {
+                console.log("Estoque insuficiente");
+            } else {
+                this.quantidade = this.quantidade - quantidade;
+            }
+        }
+
+        repor(quantidadeRepor) {
+            this.quantidade += quantidadeRepor;
+        }
+    }
     
+    let produto3 = new Produto3("Lápis", "12,65", 3); 
+    produto3.repor(2);
+
+    console.log(produto3);
+
+    // 7º Card
+    class Produto4 {
+        constructor(nome, preco, quantidade) {
+            this.nome = nome;
+            this.preco = preco;
+            this.quantidade = quantidade;
+        }
+
+        vender(quantidade) {
+            if (quantidade > this.quantidade) {
+                console.log("Estoque insuficiente");
+            } else {
+                this.quantidade = this.quantidade - quantidade;
+            }
+        }
+
+        repor(quantidadeRepor) {
+            this.quantidade += quantidadeRepor;
+        }
+
+        mostrarEstoque() {
+            console.log(`o produto ${this.nome} possui ${this.quantidade} unidades disponíveis`);
+        }
+    }
+    
+    let produto4 = new Produto4("Lápis", "12,65", 3); 
+    produto4.mostrarEstoque();
+
+    // 8º Card
+    class Produto5 {
+        constructor(nome, preco, quantidade) {
+            this.nome = nome;
+            this.preco = preco;
+            this.quantidade = quantidade;
+        }
+
+        vender(quantidade) {
+            if (quantidade > this.quantidade) {
+                console.log("Estoque insuficiente");
+            } else {
+                this.quantidade = this.quantidade - quantidade;
+            }
+        }
+
+        repor(quantidadeRepor) {
+            this.quantidade += quantidadeRepor;
+        }
+
+        mostrarEstoque() {
+            console.log(`o produto ${this.nome} possui ${this.quantidade} unidades disponíveis`);
+        }
+
+        atualizarPreco(novoPreco) {
+            this.preco = novoPreco;
+        }
+    }
+    
+    let produto5 = new Produto5("Lápis", "12,65", 3); 
+    produto5.atualizarPreco("17,43");
+
+    console.log(produto5);
 </script>
